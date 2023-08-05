@@ -13,22 +13,91 @@ import (
 
 // LogoSmall K9s small log.
 var LogoSmall = []string{
-	` ____  __.________       `,
-	`|    |/ _/   __   \______`,
-	`|      < \____    /  ___/`,
-	`|    |  \   /    /\___ \ `,
-	`|____|__ \ /____//____  >`,
-	`        \/            \/ `,
+	`    ╬╬╬╙╙║╬╬╙╙╣╬╬`,
+	`    ╬╬   ║╬╡   ╠╬`,
+	`         ║╬╡     `,
+	`    ╬╬╬  ║╬╡  ╬╬╬`,
+	`         ║╬╡     `,
+	`       ╓╗╣╬╬╗╖   `,
+}
+
+var LogoSmall1 = []string{
+	`     ]@╗╗╗╗╖╓.,,`,
+	`     ]╩   ╬╬  ╙╬`,
+	`     '    ╬╬   ╚`,
+	`     ]╗╗  ╬╬  ╗m`,
+	`          ╬╬    `,
+	`        ╔@╬╝Ñª  `,
+}
+
+var LogoSmall2 = []string{
+	`        ╗╖,     `,
+	`        ╩ ╞▌╙▒  `,
+	`          ▐▌   `,
+	`        ╬⌐▐▌ ╬  `,
+	`          ▐▌    `,
+	`          ╣╬ε   `,
+}
+
+var LogoSmall3 = []string{
+	`           ╖    `,
+	`           ╝    `,
+	`           ⌐    `,
+	`           b░   `,
+	`                `,
+	`           ε    `,
+}
+
+var LogoSmall4 = []string{
+	`          ╓     `,
+	`          Γ⌐    `,
+	`          .     `,
+	`         Γ░     `,
+	`                `,
+	`          ]µ    `,
+}
+var LogoSmall5 = []string{
+	`        ,╓╖.╖ `,
+	`       ▐╙║▌ ╙▌  `,
+	`         ▐▌  ⌐  `,
+	`       ╘Γ▐▌ ╬⌐  `,
+	`         ╞▌     `,
+	`        :╣╬     `,
+}
+var LogoSmall6 = []string{
+	`     ,,╓╖╔╗╗╗@ε `,
+	`     ║╩  ╬╬   ╚Γ`,
+	`         ╬╬     `,
+	`     └╜⌐ ╬╬  ╝╝Γ`,
+	`         ╬╬     `,
+	`       ªå╝╬▒╗   `,
 }
 
 // LogoBig K9s big logo for splash page.
 var LogoBig = []string{
-	` ____  __.________      _________ .____    .___ `,
-	`|    |/ _/   __   \_____\_   ___ \|    |   |   |`,
-	`|      < \____    /  ___/    \  \/|    |   |   |`,
-	`|    |  \   /    /\___ \\     \___|    |___|   |`,
-	`|____|__ \ /____//____  >\______  /_______ \___|`,
-	`        \/            \/        \/        \/    `,
+	`╬╬╬╙╙║╬╬╙╙╣╬╬           `,
+	`╬╬   ║╬╡   ╠╬           `,
+	`     ║╬╡                `,
+	`╬╬╬  ║╬╡  ╬╬╬  ╬╬╬  ╬╬╬ `,
+	`     ║╬╡                `,
+	`   ╓╗╣╬╬╗╖              `,
+}
+
+var currentNum = 0
+
+func LogoChanger() []string {
+	logos := [][]string{
+		LogoSmall, LogoSmall1, LogoSmall2, LogoSmall3, LogoSmall4, LogoSmall5, LogoSmall6}
+	currentNum++
+
+	index := currentNum / 2
+
+	if index > len(logos)-1 {
+		currentNum = 0
+		return logos[0]
+	}
+
+	return logos[index]
 }
 
 // Splash represents a splash screen.
